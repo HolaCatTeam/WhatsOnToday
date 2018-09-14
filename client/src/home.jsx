@@ -102,13 +102,6 @@ class App extends Component {
 
              <Events eventInfo ={eventInfo} />
 
-             <div id="down">
-             <center><p>© 2009–2018 -What'sOnToday.com, Inc or its affiliates, Toledo 39. Col Juárez, Del. Cuauhtémoc. WhatsOnToday.com is operated by HolaCatTeam.</p></center>
-           <br></br>
-        <center><h6>Keep Up With Us</h6></center>
-
-          <center><p>Join our facebook and we’ll stay in touch! You’ll be the first to know about special offers and the best events near you.</p></center>
-           </div>
 
     </div>
 
@@ -117,3 +110,12 @@ class App extends Component {
 }
 
 export default App;
+
+// <div id="down">
+// <footer>© 2009–2018 -What'sOnToday.com, Inc or its affiliates, Toledo 39. Col Juárez, Del. Cuauhtémoc. WhatsOnToday.com is operated by HolaCatTeam.</p></center>
+// <br></br>
+// <center><h6>Keep Up With Us</h6></center>
+//
+// <center><p>Join our facebook and we’ll stay in touch! You’ll be the first to know about special offers and the best events near you.</p></center>
+// </footer>
+// </div>

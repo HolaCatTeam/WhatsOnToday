@@ -39,6 +39,7 @@ class Comments extends React.Component {
        <div>
         <Add addComment={this.addComment}/>
        </div>
+       
      )
    }
 
