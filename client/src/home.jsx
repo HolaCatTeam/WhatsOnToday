@@ -118,9 +118,12 @@ componentDidMount() {
 
             <div>
 
+<<<<<<< 6a5a780106c508262c3846cf50a51917f92b7688
               <Footer />
 
             </div>
+=======
+>>>>>>> links
 
     </div>
 
@@ -129,3 +132,12 @@ componentDidMount() {
 }
 
 export default App;
+
+// <div id="down">
+// <footer>© 2009–2018 -What'sOnToday.com, Inc or its affiliates, Toledo 39. Col Juárez, Del. Cuauhtémoc. WhatsOnToday.com is operated by HolaCatTeam.</p></center>
+// <br></br>
+// <center><h6>Keep Up With Us</h6></center>
+//
+// <center><p>Join our facebook and we’ll stay in touch! You’ll be the first to know about special offers and the best events near you.</p></center>
+// </footer>
+// </div>
