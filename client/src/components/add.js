@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import SweetAlert from 'sweetalert';
+
 
 class Add extends Component {
   constructor(props){
@@ -32,7 +34,7 @@ class Add extends Component {
             <center><input className="comments radius form-control-sm form-control-lg"  type='text'  placeholder='             Speak out, let us know what you think about Us!!.. any special event we are not covering??' value={this.state.description} onChange={this.handleComments}></input>
 
             <button className="send btn btn-primary btn-lg" onClick={this.add}> Send </button></center>
-
+            
           </div>
 
 

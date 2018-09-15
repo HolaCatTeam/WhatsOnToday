@@ -50,8 +50,7 @@ return (
 			name={this.props.name}
 			icon={redMarker}
       animation= {google.maps.Animation.DROP}
-			onMouseOver={() => this.handleToggleOpen()}
-			>
+			onMouseOver={() => this.handleToggleOpen()}>
 
 			{this.state.isOpen &&
 					<InfoWindow onMouseOut={() => this.handleToggleClose()}>

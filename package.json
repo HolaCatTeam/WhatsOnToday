@@ -27,6 +27,8 @@
     "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "recompose": "^0.26.0"
+    "react-simplert": "0.0.2",
+    "recompose": "^0.26.0",
+    "sweetalert": "^2.1.0"
   }
 }

@@ -9,6 +9,7 @@ import Contact from './components/Comments.js';
 import Navigation from './components/Navigation.js';
 import Comments from './components/feedback.jsx';
 import Footer from './components/footer.jsx';
+import swal from 'sweetalert';
 
 class App extends Component {
  constructor (props){
@@ -25,9 +26,14 @@ class App extends Component {
    this.getEvent = this.getEvent.bind(this);
    this.getCategory = this.getCategory.bind(this);
    this.addComment = this.addComment.bind(this);
+   this.sweetalertfunction = this.sweetalertfunction.bind(this);
 
  }
 
+sweetalertfunction(scr){
+  console.log("button clicked")
+  swal(scr)
+}
 
  addComment(description) {
 
@@ -63,12 +69,12 @@ class App extends Component {
  }
 
  getCategory(categorySelected) {
-    var proxyUrl = `https://cors-anywhere.herokuapp.com/`, targetUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${this.state.lat}, ${this.state.lon}&within=14&t=today&c=${categorySelected}`
+    var proxyUrl = `https://cors-anywhere.herokuapp.com/`, targetUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${this.state.lat}, ${this.state.lon}&within=14&t=today&q=${categorySelected}`
     fetch (proxyUrl + targetUrl)
     .then(res => res.json())
     .then(data => {
       if (data.events === null) {
-        return alert('Sorry!!..there are no '+ categorySelected +' events scheduled today');
+        return this.sweetalertfunction('Sorry!!..there are no '+ categorySelected +' events scheduled today');
       } else {
         this.setState({
             eventList: data.events.event
@@ -116,17 +122,13 @@ componentDidMount() {
 
             </div>
 
-<<<<<<< HEAD
             <div>
 
-<<<<<<< 6a5a780106c508262c3846cf50a51917f92b7688
               <Footer />
 
             </div>
-=======
->>>>>>> links
-=======
->>>>>>> 0278d569fd3a8128f16ec92767d310bc30a4e3d3
+
+
 
     </div>
 
