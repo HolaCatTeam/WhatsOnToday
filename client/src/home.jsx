@@ -27,7 +27,14 @@ class App extends Component {
    this.getCategory = this.getCategory.bind(this);
    this.addComment = this.addComment.bind(this);
    this.sweetalertfunction = this.sweetalertfunction.bind(this);
+   this.openInfoWindow= this.openInfoWindow.bind(this);
 
+ }
+
+ openInfoWindow(id){
+   this.setState({
+     eventId: id
+   })
  }
 
 sweetalertfunction(scr){
@@ -58,8 +65,7 @@ sweetalertfunction(scr){
  }
 
   async getEvent() {
-    var proxyUrl = `https://cors-anywhere.herokuapp.com/`, targetUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${this.state.lat}, ${this.state.lon}&within=14&t=today`
-   await fetch (proxyUrl + targetUrl)
+   await fetch (`http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${this.state.lat}, ${this.state.lon}&within=14&t=today`)
     .then(res => res.json())
     .then(data => {
     this.setState({
@@ -69,8 +75,7 @@ sweetalertfunction(scr){
  }
 
  getCategory(categorySelected) {
-    var proxyUrl = `https://cors-anywhere.herokuapp.com/`, targetUrl = `http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${this.state.lat}, ${this.state.lon}&within=14&t=today&q=${categorySelected}`
-    fetch (proxyUrl + targetUrl)
+    fetch (`http://api.eventful.com/json/events/search?app_key=${API_KEY}&location=${this.state.lat}, ${this.state.lon}&within=14&t=today&q=${categorySelected}`)
     .then(res => res.json())
     .then(data => {
       if (data.events === null) {
@@ -112,13 +117,13 @@ componentDidMount() {
 
             <div className= "col-md-6 mapstyle" style={{height:200}}>
 
-               <Map locationInfo = {locations} />
+               <Map locationInfo = {locations} eventId={this.state.eventId}/>
 
             </div>
 
             <div className= "scrollEvents col-md-6">
 
-              <Events eventInfo ={eventInfo} />
+              <Events eventInfo ={eventInfo} openInfoWindow = {this.openInfoWindow}/>
 
             </div>
 

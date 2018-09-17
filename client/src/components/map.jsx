@@ -28,6 +28,7 @@ const Map = compose(
                     title={marker[2]}
                     name={marker[3]}
                     description={marker[4]}
+                    eventId={props.eventId}
                     />
                 )}
 
